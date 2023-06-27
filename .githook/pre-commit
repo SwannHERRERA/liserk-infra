@@ -1,0 +1,3 @@
+just format
+# Ensure new line at end of files
+git ls-files | xargs -L1 bash -c 'test "$(tail -c1 "$0")" && echo "" >> $0; (true)'
