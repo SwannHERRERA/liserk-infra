@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rust-app-5545
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rust-app-5545
+  template:
+    metadata:
+      labels:
+        app: rust-app-5545
+    spec:
+      containers:
+        - name: rust-app
+          image: registry.<region>.scw.cloud/your-namespace/your-rust-app:latest
+          ports:
+            - containerPort: 5545
+          imagePullPolicy: Always
